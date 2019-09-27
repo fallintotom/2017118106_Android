@@ -20,6 +20,7 @@ public class hello2 extends AppCompatActivity {
         bthello2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                Toast.makeText(hello2.this,"You clicked return button!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(hello2.this, MainActivity.class);
                 startActivity(intent);
             }
