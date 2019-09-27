@@ -17,6 +17,7 @@ public class hello2 extends AppCompatActivity {
         setContentView(R.layout.activity_hello2);
         Button bthello2 = (Button) findViewById(R.id.bthello2);
         Button bthello3 = (Button) findViewById(R.id.bthello3);
+        Button stayhello2 = (Button) findViewById(R.id.stayhello2);
         bthello2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -29,7 +30,17 @@ public class hello2 extends AppCompatActivity {
         bthello3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(hello2.this,"This is the second Activity!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(hello2.this,"You clicked tohello3 button!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(hello2.this, hello3.class);
+                startActivity(intent);
+            }
+        });
+        stayhello2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Toast.makeText(hello2.this,"You clicked tohello3 button!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(hello2.this, hello2.class);
+                startActivity(intent);
             }
         });
         setTitle("Hello2");
