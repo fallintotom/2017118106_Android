@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".hello3">
 
     <LinearLayout
         android:layout_width="360dp"
@@ -12,24 +12,21 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/bthello1"
-            android:layout_width="match_parent"
+            android:id="@+id/bthello4"
+            android:layout_width="360dp"
+            android:layout_height="70dp"
+            android:text="tohello1" />
+
+        <Button
+            android:id="@+id/bthello5"
+            android:layout_width="360dp"
             android:layout_height="70dp"
             android:text="tohello2" />
 
         <Button
-            android:id="@+id/bthello3"
-            android:layout_width="match_parent"
+            android:id="@+id/bthello6"
+            android:layout_width="360dp"
             android:layout_height="70dp"
-            android:layout_weight="1"
-            android:text="tohello3" />
-
-        <Button
-            android:id="@+id/stayhello1"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="stayhello1" />
-
+            android:text="stayhere" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
