@@ -1,0 +1,83 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.broadcasttest"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->E:\BroadcastTest\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->E:\BroadcastTest\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:5:4-78
+11-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:5:21-75
+12    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+12-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:6:5-81
+12-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:6:22-78
+13
+14    <application
+14-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:7:5-36:19
+15        android:allowBackup="true"
+15-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:8:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
+17        android:debuggable="true"
+18        android:icon="@mipmap/ic_launcher"
+18-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:9:9-43
+19        android:label="@string/app_name"
+19-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:10:9-41
+20        android:supportsRtl="true"
+20-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:11:9-35
+21        android:testOnly="true"
+22        android:theme="@style/AppTheme" >
+22-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:12:9-40
+23        <receiver
+23-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:13:8-20:20
+24            android:name="com.example.broadcasttest.MyBroadcastReceiver"
+24-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:14:13-48
+25            android:enabled="true"
+25-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:15:13-35
+26            android:exported="true" >
+26-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:16:13-36
+27            <intent-filter>
+27-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:17:13-19:29
+28                <action android:name="com.example.broadcasttest.MY_BROADCAST" />
+28-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:18:17-80
+28-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:18:25-78
+29            </intent-filter>
+30        </receiver>
+31        <receiver
+31-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:21:8-28:20
+32            android:name="com.example.broadcasttest.BootCompleteReceiver"
+32-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:22:13-49
+33            android:enabled="true"
+33-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:23:13-35
+34            android:exported="true" >
+34-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:24:13-36
+35            <intent-filter>
+35-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:25:13-27:29
+36                <action android:name="android.intent.action.BOOT_COMPLETED" />
+36-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:26:17-79
+36-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:26:25-76
+37            </intent-filter>
+38        </receiver>
+39
+40        <activity android:name="com.example.broadcasttest.MainActivity" >
+40-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:29:9-35:20
+40-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:29:19-47
+41            <intent-filter>
+41-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:30:13-34:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:31:17-69
+42-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:31:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:33:17-77
+44-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:33:27-74
+45            </intent-filter>
+46        </activity>
+47    </application>
+48
+49</manifest>
