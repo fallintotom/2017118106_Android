@@ -1,16 +1,16 @@
 package com.example.chapter_3;
 
-import android.content.Intent;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -37,67 +37,22 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item,parent,false);
         final ViewHolder holder = new ViewHolder(view);
         holder.fruitView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                final int position = holder.getAdapterPosition();
-                final Fruit fruit = mFruitList.get(position);
-                final MainActivity main = new MainActivity();
-                //Toast.makeText(v.getContext(),"you clicked view"+fruit.getName(),Toast.LENGTH_SHORT).show();
-                Snackbar.make(view,"是否删除该水果？",Snackbar.LENGTH_SHORT).setAction("删除",new View.OnClickListener(){
-                    @Override
-                    public void onClick(View view1){
-                        main.deleteFruit(position);
-                        ///Toast.makeText(view1.getContext(),"已删除"+fruit.getName(),Toast.LENGTH_SHORT).show();
-                        //main.initFruits();
-                    }
-                }).addCallback(new Snackbar.Callback(){
-                    @Override
-                    public void onDismissed(Snackbar transientBottomBar, int event) {
-                        super.onDismissed(transientBottomBar, event);
-                        Toast.makeText(view.getContext(), "已删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(view.getContext(),FruitAdapter.class);
-                        main.initFruits();
-                        //main.startActivity(intent);
-                    }
-                    @Override
-                    public void onShown(Snackbar sb) {
-                        super.onShown(sb);
-                        //Toast.makeText(view.getContext(), "Snackbar显示", Toast.LENGTH_SHORT).show();
-                    }
-                }).show();
+                int position = holder.getAdapterPosition();
+                Fruit fruit = mFruitList.get(position);
+                Toast.makeText(v.getContext(),"you clicked view"+fruit.getName(),Toast.LENGTH_SHORT).show();
             }
         });
         holder.fruitImage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                final int position = holder.getAdapterPosition();
-                final Fruit fruit = mFruitList.get(position);
-                final MainActivity main = new MainActivity();
-                Snackbar.make(view,"是否删除该水果？",Snackbar.LENGTH_SHORT).setAction("删除",new View.OnClickListener(){
-                    @Override
-                    public void onClick(View view1){
-                        main.deleteFruit(position);
-                        //Toast.makeText(view1.getContext(),"已删除"+fruit.getName(),Toast.LENGTH_SHORT).show();
-                        //main.initFruits();
-                    }
-                }).addCallback(new Snackbar.Callback(){
-                    @Override
-                    public void onDismissed(Snackbar transientBottomBar, int event) {
-                        super.onDismissed(transientBottomBar, event);
-                        Toast.makeText(view.getContext(), "已删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(view.getContext(),FruitAdapter.class);
-                        main.initFruits();
-                        //main.startActivity(intent);
-                    }
-                    @Override
-                    public void onShown(Snackbar sb) {
-                        super.onShown(sb);
-                        //Toast.makeText(view.getContext(), "Snackbar显示", Toast.LENGTH_SHORT).show();
-                    }
-                }).show();
+                int position = holder.getAdapterPosition();
+                Fruit fruit = mFruitList.get(position);
+                Toast.makeText(v.getContext(),"you clicked image"+fruit.getName(),Toast.LENGTH_SHORT).show();
             }
         });
         return holder;
