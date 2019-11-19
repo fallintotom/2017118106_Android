@@ -20,6 +20,7 @@ import static com.example.chapter_3.MainActivity.adapter;
 
 public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
     private List<Fruit> mFruitList;
+    int sum;
     @Override
     public void onClick(View v) {
 
@@ -45,7 +46,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         }
     }
     public FruitAdapter(List<Fruit> fruitList){
-       mFruitList = fruitList;
+        mFruitList = fruitList;
     }
 
     @Override
@@ -56,22 +57,14 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
             @Override
             public void onClick(View v){
                 final int position = holder.getAdapterPosition();
+                sum = position;
                 final Fruit fruit = mFruitList.get(position);
-                /*//创建弹出式菜单对象（最低版本11）
-                PopupMenu popup = new PopupMenu(v.getContext(), v);//第二个参数是绑定的那个view
-                //获取菜单填充器
-                MenuInflater inflater = popup.getMenuInflater();
-                //填充菜单
-                inflater.inflate(R.menu.menu, popup.getMenu());
-                //绑定菜单项的点击事件
-                popup.setOnMenuItemClickListener((PopupMenu.OnMenuItemClickListener) v.getContext());
-                //显示(这一行代码不要忘记了)
-                popup.show();*/
                 //Toast.makeText(v.getContext(),"you clicked view"+fruit.getName(),Toast.LENGTH_SHORT).show();
                 Snackbar.make(view,"是否删除该水果？",Snackbar.LENGTH_LONG).setAction("删除",new View.OnClickListener(){
                     @Override
                     public void onClick(View view1){
                         adapter.deleteFruit(position,adapter);
+                        sum = sum - 1;
                         ///Toast.makeText(view1.getContext(),"已删除"+fruit.getName(),Toast.LENGTH_SHORT).show();
                         //main.initFruits();
                     }
@@ -79,7 +72,11 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
                     @Override
                     public void onDismissed(Snackbar transientBottomBar, int event) {
                         super.onDismissed(transientBottomBar, event);
-                        Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        if(sum  != position){
+                            Toast.makeText(view.getContext(), "已删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        }
                         Intent intent = new Intent(view.getContext(),FruitAdapter.class);
                         MainActivity.initFruits();
                         //main.startActivity(intent);
@@ -87,40 +84,24 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
                     @Override
                     public void onShown(Snackbar sb) {
                         super.onShown(sb);
-                        //Toast.makeText(view.getContext(), "Snackbar显示", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
                     }
                 }).show();
             }
-            /*public boolean onMenuItemClick(MenuItem item) {
-                // TODO Auto-generated method stub
-                switch (item.getItemId()) {
-                    case R.id.add:
-                        Toast.makeText(this, "添加水果", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.delete:
-                        Toast.makeText(this, "删除水果", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.update:
-                        Toast.makeText(this, "修改水果", Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        break;
-                }
-                return false;
-            }*/
-
         });
         holder.fruitImage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 final int position = holder.getAdapterPosition();
+                sum = position;
                 final Fruit fruit = mFruitList.get(position);
-              //  final MainActivity main = new MainActivity();
+                //  final MainActivity main = new MainActivity();
                 Snackbar.make(view,"是否删除该水果？",Snackbar.LENGTH_LONG).setAction("删除",new View.OnClickListener(){
                     @Override
                     public void onClick(View view1){
-                       //MainActivity.deleteFruit(position);
+                        //MainActivity.deleteFruit(position);
                         adapter.deleteFruit(position,adapter);
+                        sum = sum - 1;
                         //Toast.makeText(view1.getContext(),"已删除"+fruit.getName(),Toast.LENGTH_SHORT).show();
                         //main.initFruits();
                     }
@@ -128,7 +109,11 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
                     @Override
                     public void onDismissed(Snackbar transientBottomBar, int event) {
                         super.onDismissed(transientBottomBar, event);
-                        Toast.makeText(view.getContext(), "已删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        if(sum  != position){
+                            Toast.makeText(view.getContext(), "已删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        }
                         Intent intent = new Intent(view.getContext(),FruitAdapter.class);
                         MainActivity.initFruits();
                         //main.startActivity(intent);
@@ -136,7 +121,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
                     @Override
                     public void onShown(Snackbar sb) {
                         super.onShown(sb);
-                        //Toast.makeText(view.getContext(), "Snackbar显示", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
                     }
                 }).show();
             }
