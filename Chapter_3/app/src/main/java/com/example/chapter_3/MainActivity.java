@@ -1,16 +1,10 @@
 package com.example.chapter_3;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +12,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Fruit> fruitList = new ArrayList<>();
+    private static  List<Fruit> fruitList = new ArrayList<>();
+    public static FruitAdapter adapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        FruitAdapter adapter = new FruitAdapter(fruitList);
+        adapter = new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);
     }
 
-    private void initFruits() {
+    public static void initFruits() {
         for (int i = 0;i < 2; i++){
             Fruit apple = new Fruit(getRandomLengthName("Apple"),R.drawable.apple_pic);
             fruitList.add(apple);
@@ -57,13 +52,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private String getRandomLengthName(String name) {
+    private static String getRandomLengthName(String name) {
         Random random = new Random();
         int length = random.nextInt(20)+1;
         StringBuilder builder = new StringBuilder();
+        //builder.append(name);
         for (int i = 0; i < length; i++){
             builder.append(name);
         }
         return builder.toString();
     }
+    /*public static void deleteFruit(int position){
+        int length = fruitList.size();
+        for (int i = 0; i < length; i++){
+            if(i == position){
+                fruitList.remove(i);
+                break;
+            }
+        }
+        adapter.notifyDataSetChanged();
+        //initFruits();
+    }*/
 }
