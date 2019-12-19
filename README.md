@@ -17,3 +17,5 @@
 
 6、Chapter_9项目：
 新增Chapter_9项目，编写服务。（调用前台服务崩溃，已解决程序异常，但通知图标未弹出，未解决）。
+
+将Chapter_9更名为Service，对Service项目更改为使用IntentService。

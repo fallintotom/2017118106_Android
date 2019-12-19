@@ -44,12 +44,18 @@ public class MyService extends Service {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher))
                 .setContentIntent(pi).build();
-        startForeground(1,notification);
+        startForeground(0,notification);
     }
 
     @Override
     public int onStartCommand(Intent intent,int flags,int startId){
         Log.d("MyService","onStartCommand executed");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                stopSelf();
+            }
+        }).start();
         return super.onStartCommand(intent,flags,startId);
     }
 
