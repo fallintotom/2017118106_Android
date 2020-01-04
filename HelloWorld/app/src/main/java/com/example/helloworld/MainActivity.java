@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity{
         );
         setTitle("Hello1");
     }
-
     @Override
     protected void onStart() {
         super.onStart();
