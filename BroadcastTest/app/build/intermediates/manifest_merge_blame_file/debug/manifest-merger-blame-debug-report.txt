@@ -22,7 +22,7 @@
 15        android:allowBackup="true"
 15-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:8:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
+16-->[androidx.core:core:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\e9dab9c67c1ee3668e0bbf86c6d8cbd8\core-1.1.0\AndroidManifest.xml:24:18-86
 17        android:debuggable="true"
 18        android:icon="@mipmap/ic_launcher"
 18-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:9:9-43
@@ -30,54 +30,53 @@
 19-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:10:9-41
 20        android:supportsRtl="true"
 20-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:11:9-35
-21        android:testOnly="true"
-22        android:theme="@style/AppTheme" >
-22-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:12:9-40
-23        <receiver
-23-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:13:8-20:20
-24            android:name="com.example.broadcasttest.MyBroadcastReceiver"
-24-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:14:13-48
-25            android:enabled="true"
-25-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:15:13-35
-26            android:exported="true" >
-26-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:16:13-36
-27            <intent-filter>
-27-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:17:13-19:29
-28                <action android:name="com.example.broadcasttest.MY_BROADCAST" />
-28-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:18:17-80
-28-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:18:25-78
-29            </intent-filter>
-30        </receiver>
-31        <receiver
-31-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:21:8-28:20
-32            android:name="com.example.broadcasttest.BootCompleteReceiver"
-32-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:22:13-49
-33            android:enabled="true"
-33-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:23:13-35
-34            android:exported="true" >
-34-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:24:13-36
-35            <intent-filter>
-35-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:25:13-27:29
-36                <action android:name="android.intent.action.BOOT_COMPLETED" />
-36-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:26:17-79
-36-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:26:25-76
-37            </intent-filter>
-38        </receiver>
-39
-40        <activity android:name="com.example.broadcasttest.MainActivity" >
-40-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:29:9-35:20
-40-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:29:19-47
-41            <intent-filter>
-41-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:30:13-34:29
-42                <action android:name="android.intent.action.MAIN" />
-42-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:31:17-69
-42-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:31:25-66
-43
-44                <category android:name="android.intent.category.LAUNCHER" />
-44-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:33:17-77
-44-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:33:27-74
-45            </intent-filter>
-46        </activity>
-47    </application>
-48
-49</manifest>
+21        android:theme="@style/AppTheme" >
+21-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:12:9-40
+22        <receiver
+22-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:13:8-20:20
+23            android:name="com.example.broadcasttest.MyBroadcastReceiver"
+23-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:14:13-48
+24            android:enabled="true"
+24-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:15:13-35
+25            android:exported="true" >
+25-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:16:13-36
+26            <intent-filter>
+26-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:17:13-19:29
+27                <action android:name="com.example.broadcasttest.MY_BROADCAST" />
+27-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:18:17-80
+27-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:18:25-78
+28            </intent-filter>
+29        </receiver>
+30        <receiver
+30-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:21:8-28:20
+31            android:name="com.example.broadcasttest.BootCompleteReceiver"
+31-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:22:13-49
+32            android:enabled="true"
+32-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:23:13-35
+33            android:exported="true" >
+33-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:24:13-36
+34            <intent-filter>
+34-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:25:13-27:29
+35                <action android:name="android.intent.action.BOOT_COMPLETED" />
+35-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:26:17-79
+35-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:26:25-76
+36            </intent-filter>
+37        </receiver>
+38
+39        <activity android:name="com.example.broadcasttest.MainActivity" >
+39-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:29:9-35:20
+39-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:29:19-47
+40            <intent-filter>
+40-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:30:13-34:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:31:17-69
+41-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:31:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:33:17-77
+43-->E:\BroadcastTest\app\src\main\AndroidManifest.xml:33:27-74
+44            </intent-filter>
+45        </activity>
+46    </application>
+47
+48</manifest>

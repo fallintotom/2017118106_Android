@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     private IntentFilter intentFilter;
     private NetworkChangeReceiver networkChangeReceiver;
     @Override
