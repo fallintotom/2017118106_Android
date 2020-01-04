@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         unregisterReceiver(networkChangeReceiver);
     }
-
     class NetworkChangeReceiver extends BroadcastReceiver{
         @Override
         public void onReceive(Context context, Intent intent){
