@@ -1,14 +1,13 @@
 package com.example.helloworld;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class hello2 extends AppCompatActivity {
     private String TAG = "Hello2";
@@ -31,6 +30,7 @@ public class hello2 extends AppCompatActivity {
                 startActivity(intent);
             }
         }
+        
         );
         bthello3.setOnClickListener(new View.OnClickListener(){
             @Override
