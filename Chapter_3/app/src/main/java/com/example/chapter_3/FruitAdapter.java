@@ -1,9 +1,11 @@
 package com.example.chapter_3;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,10 +13,16 @@ import android.widget.Toast;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.List;
+
+import static com.example.chapter_3.MainActivity.adapter;
+import static com.example.chapter_3.R.menu.menu;
 
 public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
     private List<Fruit> mFruitList;
+    private AdapterView.OnItemLongClickListener mOnItemLongClickListener=null;
     int sum;
     @Override
     public void onClick(View v) {
@@ -116,9 +124,37 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         });
         holder.fruitView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View v) {
+            public boolean onLongClick(final View v) {
+                final int position = holder.getAdapterPosition();
+                sum = position;
+                final Fruit fruit = mFruitList.get(position);
+                /*Snackbar.make(view,"是否删除该水果？",Snackbar.LENGTH_LONG).setAction("删除",new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view1){
+                        adapter.deleteFruit(position,adapter);
+                        sum = sum - 1;
+                    }
+                }).addCallback(new Snackbar.Callback(){
+                    @Override
+                    public void onDismissed(Snackbar transientBottomBar, int event) {
+                        super.onDismissed(transientBottomBar, event);
+                        if(sum  != position){
+                            Toast.makeText(view.getContext(), "已删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        }
+                        Intent intent = new Intent(view.getContext(),FruitAdapter.class);
+                        MainActivity.initFruits();
+                    }
+                    @Override
+                    public void onShown(Snackbar sb) {
+                        super.onShown(sb);
+                        //Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                    }
+                }).show();*/
+                
                 PopupMenu popupMenu = new PopupMenu(v.getContext(), v);
-                popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
+                popupMenu.getMenuInflater().inflate(menu, popupMenu.getMenu());              //问题语句
                 popupMenu.show();
                 //弹出式菜单的菜单项点击事件
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -163,11 +199,39 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         });
         holder.fruitImage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                PopupMenu popupMenu = new PopupMenu(v.getContext(), v);
-                popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
-
+            public boolean onLongClick(final View v) {
+                final int position = holder.getAdapterPosition();
+                sum = position;
+                final Fruit fruit = mFruitList.get(position);
+                Snackbar.make(view,"是否删除该水果？",Snackbar.LENGTH_LONG).setAction("删除",new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view1){
+                        adapter.deleteFruit(position,adapter);
+                        sum = sum - 1;
+                    }
+                }).addCallback(new Snackbar.Callback(){
+                    @Override
+                    public void onDismissed(Snackbar transientBottomBar, int event) {
+                        super.onDismissed(transientBottomBar, event);
+                        if(sum  != position){
+                            Toast.makeText(view.getContext(), "已删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                        }
+                        Intent intent = new Intent(view.getContext(),FruitAdapter.class);
+                        MainActivity.initFruits();
+                    }
+                    @Override
+                    public void onShown(Snackbar sb) {
+                        super.onShown(sb);
+                        //Toast.makeText(view.getContext(), "未删除"+fruit.getName(), Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+                /*PopupMenu popupMenu = new PopupMenu(v.getContext(), v);
+                popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());            //问题语句
+                popupMenu.show();
                 //弹出式菜单的菜单项点击事件
+
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     int position = holder.getAdapterPosition();
 
@@ -201,7 +265,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
                         }
                         return false;
                     }
-                });
+                });*/
                 return false;
             }
         });

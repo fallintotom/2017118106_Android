@@ -1227,7 +1227,6 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
-id password
 id percent
 id pin
 id progress_circular
@@ -1315,7 +1314,6 @@ id unlabeled
 id up
 id update
 id useLogo
-id username
 id view_offset_helper
 id visible
 id withText
@@ -1391,7 +1389,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout dialoglayout
 layout fruit_item
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
