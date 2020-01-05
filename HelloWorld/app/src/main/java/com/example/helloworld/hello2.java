@@ -30,7 +30,6 @@ public class hello2 extends AppCompatActivity {
                 startActivity(intent);
             }
         }
-        
         );
         bthello3.setOnClickListener(new View.OnClickListener(){
             @Override
