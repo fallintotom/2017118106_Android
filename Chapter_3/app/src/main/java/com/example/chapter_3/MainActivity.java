@@ -73,5 +73,4 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
         //initFruits();
     }*/
-    
 }
