@@ -1,4 +1,4 @@
-package com.example.broadcasttest;
+﻿package com.example.broadcasttest;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.BroadcastReceiver;
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
                  sendBroadcast(intent);
             }
         });
+
         intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         networkChangeReceiver = new NetworkChangeReceiver();
